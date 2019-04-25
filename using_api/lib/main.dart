@@ -42,9 +42,7 @@ class _MyMainPageState extends State<MyMainPage> {
     print(dato["query"]);
     Map pages= dato["query"]["pages"];
     var primerallave=pages.keys.first;
-    print(primerallave);
     titulo=pages[primerallave]["title"];
-    print("html:  "+textohtml);
     setState(() {
       textohtml=pages[primerallave]["extract"];
     });
@@ -69,7 +67,7 @@ class _MyMainPageState extends State<MyMainPage> {
                   ),
                   onChanged: (value){
                     setState(() {
-                      consulta=value.replaceAll(" ","_");
+                      consulta=value.replaceAll(" ","_").toLowerCase();
                     });
                   },
 
